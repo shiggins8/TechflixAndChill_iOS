@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -72,7 +73,20 @@ class LoginViewController: UIViewController {
                 }
                 else
                 {
-                    print(error)
+                    if let errorCode = FAuthenticationError(rawValue: error.code) {
+                        switch (errorCode) {
+                        case .UserDoesNotExist:
+                            self.errorAlert("User Doesn't Exist", message: "We're sorry, but that username doesn't exist. Please create an account to use this app.")
+                        case .InvalidEmail:
+                            self.errorAlert("Invalid Email", message: "We're sorry, but that doesn't look like a valid email address. Please enter your valid email address to proceed")
+                        case .InvalidPassword:
+                            self.errorAlert("Incorrect Password", message: "Please enter the correct password")
+                        case .EmailTaken:
+                            self.errorAlert("Email Already Taken", message: "Aww man, someone already used that email. If you've forgotten your password, select the \"Forgot Password\" option")
+                        default:
+                            self.errorAlert("Oops", message: "An error has occurred")
+                        }
+                    }
                 }
                 
             })

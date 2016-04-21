@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C9067E649098CEF8A1140E5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401F86B12DFA061DF3D4EFC1 /* Pods.framework */; };
+		C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */; };
 		C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */; };
 		C3A41F921CC92B8A00EFEE93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A41F901CC92B8A00EFEE93 /* Main.storyboard */; };
 		C3A41F941CC92B8A00EFEE93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A41F931CC92B8A00EFEE93 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		401F86B12DFA061DF3D4EFC1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E772100182A1292AAF21C6A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C3A41F891CC92B8A00EFEE93 /* TechflixAndChill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechflixAndChill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A41F911CC92B8A00EFEE93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */,
 				C3A41FBE1CC9307600EFEE93 /* CreateAccountViewController.swift */,
 				C3A41FBC1CC9306400EFEE93 /* LoginViewController.swift */,
+				C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */,
 				C3A41FBA1CC92F4200EFEE93 /* BaseService.swift */,
 				C3A41F901CC92B8A00EFEE93 /* Main.storyboard */,
 				C3A41F931CC92B8A00EFEE93 /* Assets.xcassets */,
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A41FBF1CC9307600EFEE93 /* CreateAccountViewController.swift in Sources */,
+				C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */,
 				C3A41FBD1CC9306400EFEE93 /* LoginViewController.swift in Sources */,
 				C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */,
 				C3A41FBB1CC92F4200EFEE93 /* BaseService.swift in Sources */,

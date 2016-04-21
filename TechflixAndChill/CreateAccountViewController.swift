@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateAccountViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var rePasswordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var majorTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,8 +62,12 @@ class CreateAccountViewController: UIViewController {
         
         let email = self.emailTextField.text
         let password = self.passwordTextField.text
+        let rePassword = self.rePasswordTextField.text
+        let username = self.usernameTextField.text
+        let name = self.nameTextField.text
+        let major = self.majorTextField.text
         
-        if email != "" && password != ""
+        if email != "" && password != "" && password == rePassword
         {
             FIREBASE_REF.createUser(email, password: password, withCompletionBlock: { (error) -> Void in
                 
@@ -76,21 +87,24 @@ class CreateAccountViewController: UIViewController {
 //                            var users = ["alanisawesome": alanisawesome, "gracehop": gracehop]
 //                            usersRef.setValue(users)
                             
-                            let newUser = [
-                                "email": email,
-                                "password": "hello",
-                                "uid": authData.uid,
-                                "username": "testUsername"
-                            ]
-                            
-                            let users : [String : AnyObject] = [authData.uid: newUser]
-                            
-                            USER_REF.setValue(users)
-                            
-                            //FIREBASE_REF.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(users)
-                            
                             NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                             print("Account created")
+                            
+                            let newUser = [
+                                "uid": authData.uid,
+                                "email": email,
+                                "password": password,
+                                "username": username,
+                                "name": name,
+                                "major": major
+                            ]
+                            
+                            //let users : [String : AnyObject] = [authData.uid: newUser]
+                            
+                            USER_REF.childByAppendingPath(username).setValue(newUser)
+                            //FIREBASE_REF.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(users)
+                            
+                            
                             self.dismissViewControllerAnimated(true, completion: nil)
                         }
                         else
@@ -102,7 +116,21 @@ class CreateAccountViewController: UIViewController {
                 }
                 else
                 {
-                    print(error)
+                    if let errorCode = FAuthenticationError(rawValue: error.code) {
+                        switch (errorCode) {
+                        case .UserDoesNotExist:
+                            self.errorAlert("User Doesn't Exist", message: "We're sorry, but that username doesn't exist. Please create an account to use this app.")
+                        case .InvalidEmail:
+                            self.errorAlert("Invalid Email", message: "We're sorry, but that doesn't look like a valid email address. Please enter your valid email address to proceed")
+                        case .InvalidPassword:
+                            self.errorAlert("Invalid Password", message: "Hmm, something's fishy with that password")
+                        case .EmailTaken:
+                            self.errorAlert("Email Already Taken", message: "Aww man, someone already used that email. If you've forgotten your password, select the \"Forgot Password\" option")
+                        default:
+                            self.errorAlert("Oops", message: "An error has occurred")
+                        }
+                    }
+                    
                 }
                 
             })
@@ -110,7 +138,7 @@ class CreateAccountViewController: UIViewController {
         }
         else
         {
-            errorAlert("Oops!", message: "To create an account, you'll need a username and password")
+            errorAlert("Oops!", message: "To create an account, you'll need a username and password. Make sure that your two entered passwords match.")
         }
         
     }
