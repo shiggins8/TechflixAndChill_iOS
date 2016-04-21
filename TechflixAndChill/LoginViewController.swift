@@ -70,6 +70,7 @@ class LoginViewController: UIViewController {
                     
                     print("Logged in")
                     self.logoutButton.hidden = false
+                    self.performSegueWithIdentifier("homeScreenSegue", sender:sender)
                 }
                 else
                 {
