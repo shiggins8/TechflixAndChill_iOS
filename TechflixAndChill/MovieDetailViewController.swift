@@ -44,4 +44,7 @@ class MovieDetailViewController: UIViewController {
     }
     */
 
+    @IBAction func unwindAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
