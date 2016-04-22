@@ -758,7 +758,6 @@
         <!--DVD-->
         <scene sceneID="RrL-yn-dWQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oR1-Hv-d1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="DVD Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="Yzn-ag-Ghf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="DVD" image="dvds.png" id="9lq-nb-nHJ"/>
                     <toolbarItems/>
@@ -772,6 +771,7 @@
                         <segue destination="3xv-1U-KBN" kind="relationship" relationship="rootViewController" id="PvX-9f-ByI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oR1-Hv-d1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3063" y="599"/>
         </scene>
