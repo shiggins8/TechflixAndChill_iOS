@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C9067E649098CEF8A1140E5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401F86B12DFA061DF3D4EFC1 /* Pods.framework */; };
+		2C39112125D20728163A6B4C /* Pods_TechflixAndChill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */; };
 		C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */; };
 		C3613DCB1CC997AF00D5D0E7 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */; };
+		C3613DCF1CC99FE300D5D0E7 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */; };
+		C3613DD11CC9A54000D5D0E7 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */; };
 		C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */; };
 		C3A41F921CC92B8A00EFEE93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A41F901CC92B8A00EFEE93 /* Main.storyboard */; };
 		C3A41F941CC92B8A00EFEE93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A41F931CC92B8A00EFEE93 /* Assets.xcassets */; };
@@ -39,10 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1729FBFFB39AB15045C3ABE8 /* Pods-TechflixAndChill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechflixAndChill.release.xcconfig"; path = "Pods/Target Support Files/Pods-TechflixAndChill/Pods-TechflixAndChill.release.xcconfig"; sourceTree = "<group>"; };
 		401F86B12DFA061DF3D4EFC1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E772100182A1292AAF21C6A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechflixAndChill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E9533CE466A22C0F6E7582F /* Pods-TechflixAndChill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechflixAndChill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TechflixAndChill/Pods-TechflixAndChill.debug.xcconfig"; sourceTree = "<group>"; };
 		C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		C3613DD21CC9B0F500D5D0E7 /* TechflixAndChill-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TechflixAndChill-Bridging-Header.h"; sourceTree = "<group>"; };
+		C3613DD31CC9B0F600D5D0E7 /* NSObject_Rotten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObject_Rotten.h; sourceTree = "<group>"; };
 		C3A41F891CC92B8A00EFEE93 /* TechflixAndChill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechflixAndChill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A41F911CC92B8A00EFEE93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +66,6 @@
 		C3A41FBA1CC92F4200EFEE93 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		C3A41FBC1CC9306400EFEE93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3A41FBE1CC9307600EFEE93 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		CC4FDC0342F9239BBBE19C22 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C9067E649098CEF8A1140E5 /* Pods.framework in Frameworks */,
+				2C39112125D20728163A6B4C /* Pods_TechflixAndChill.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,15 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C3AC26069C2D70D2CA79356 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CC4FDC0342F9239BBBE19C22 /* Pods.debug.xcconfig */,
-				8E772100182A1292AAF21C6A /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C3A41F801CC92B8A00EFEE93 = {
 			isa = PBXGroup;
 			children = (
@@ -103,8 +101,8 @@
 				C3A41FA01CC92B8A00EFEE93 /* TechflixAndChillTests */,
 				C3A41FAB1CC92B8A00EFEE93 /* TechflixAndChillUITests */,
 				C3A41F8A1CC92B8A00EFEE93 /* Products */,
-				3C3AC26069C2D70D2CA79356 /* Pods */,
 				E81851BAECD6B7A525CA0F59 /* Frameworks */,
+				EC66AA8895375B9214BC8EA1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */,
+				C3613DD31CC9B0F600D5D0E7 /* NSObject_Rotten.h */,
+				C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */,
+				C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */,
 				C3A41FBE1CC9307600EFEE93 /* CreateAccountViewController.swift */,
 				C3A41FBC1CC9306400EFEE93 /* LoginViewController.swift */,
 				C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */,
@@ -131,6 +132,7 @@
 				C3A41F931CC92B8A00EFEE93 /* Assets.xcassets */,
 				C3A41F951CC92B8A00EFEE93 /* LaunchScreen.storyboard */,
 				C3A41F981CC92B8A00EFEE93 /* Info.plist */,
+				C3613DD21CC9B0F500D5D0E7 /* TechflixAndChill-Bridging-Header.h */,
 			);
 			path = TechflixAndChill;
 			sourceTree = "<group>";
@@ -157,8 +159,18 @@
 			isa = PBXGroup;
 			children = (
 				401F86B12DFA061DF3D4EFC1 /* Pods.framework */,
+				86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC66AA8895375B9214BC8EA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E9533CE466A22C0F6E7582F /* Pods-TechflixAndChill.debug.xcconfig */,
+				1729FBFFB39AB15045C3ABE8 /* Pods-TechflixAndChill.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,12 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3A41FB11CC92B8A00EFEE93 /* Build configuration list for PBXNativeTarget "TechflixAndChill" */;
 			buildPhases = (
-				C7A56F14628DD33900E4F85E /* Check Pods Manifest.lock */,
+				D0EE11910F54C7FC6BB57679 /* 📦 Check Pods Manifest.lock */,
 				C3A41F851CC92B8A00EFEE93 /* Sources */,
 				C3A41F861CC92B8A00EFEE93 /* Frameworks */,
 				C3A41F871CC92B8A00EFEE93 /* Resources */,
-				46DC5BABCF74A2B74A9FB12B /* Embed Pods Frameworks */,
-				71F666EFBF8708EF4750B85F /* Copy Pods Resources */,
+				82F4C245186B3C24E9504972 /* 📦 Embed Pods Frameworks */,
+				479ACC91ACDC3BEE8A59B2B7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,44 +306,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		46DC5BABCF74A2B74A9FB12B /* Embed Pods Frameworks */ = {
+		479ACC91ACDC3BEE8A59B2B7 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TechflixAndChill/Pods-TechflixAndChill-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71F666EFBF8708EF4750B85F /* Copy Pods Resources */ = {
+		82F4C245186B3C24E9504972 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TechflixAndChill/Pods-TechflixAndChill-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C7A56F14628DD33900E4F85E /* Check Pods Manifest.lock */ = {
+		D0EE11910F54C7FC6BB57679 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,9 +360,11 @@
 			files = (
 				C3A41FBF1CC9307600EFEE93 /* CreateAccountViewController.swift in Sources */,
 				C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */,
+				C3613DD11CC9A54000D5D0E7 /* MovieCell.swift in Sources */,
 				C3A41FBD1CC9306400EFEE93 /* LoginViewController.swift in Sources */,
 				C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */,
 				C3A41FBB1CC92F4200EFEE93 /* BaseService.swift in Sources */,
+				C3613DCF1CC99FE300D5D0E7 /* MoviesViewController.swift in Sources */,
 				C3613DCB1CC997AF00D5D0E7 /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,25 +505,34 @@
 		};
 		C3A41FB21CC92B8A00EFEE93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC4FDC0342F9239BBBE19C22 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 8E9533CE466A22C0F6E7582F /* Pods-TechflixAndChill.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "/Users/Scottie/Desktop/iPhone_techflix/TechflixAndChill/Pods/**";
 				INFOPLIST_FILE = TechflixAndChill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gatech.higgins.scott.TechflixAndChill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TechflixAndChill/TechflixAndChill-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "/Users/Scottie/Desktop/iPhone_techflix/TechflixAndChill/Pods/**";
 			};
 			name = Debug;
 		};
 		C3A41FB31CC92B8A00EFEE93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E772100182A1292AAF21C6A /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1729FBFFB39AB15045C3ABE8 /* Pods-TechflixAndChill.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = /Users/Scottie/Desktop/iPhone_techflix/TechflixAndChill/Pods;
 				INFOPLIST_FILE = TechflixAndChill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gatech.higgins.scott.TechflixAndChill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TechflixAndChill/TechflixAndChill-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "/Users/Scottie/Desktop/iPhone_techflix/TechflixAndChill/Pods/**";
 			};
 			name = Release;
 		};
