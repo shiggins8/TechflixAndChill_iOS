@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2C39112125D20728163A6B4C /* Pods_TechflixAndChill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */; };
+		C358E04A1CC9BEF100E6C766 /* DVDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E0491CC9BEF100E6C766 /* DVDViewController.swift */; };
+		C358E04C1CC9C23600E6C766 /* DVDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E04B1CC9C23600E6C766 /* DVDCell.swift */; };
+		C358E04F1CC9C3D000E6C766 /* dvds.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E04D1CC9C3D000E6C766 /* dvds.png */; };
+		C358E0501CC9C3D000E6C766 /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E04E1CC9C3D000E6C766 /* movies.png */; };
+		C358E0521CC9D0D100E6C766 /* blue_green.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E0511CC9D0D100E6C766 /* blue_green.png */; };
+		C358E0541CC9D12100E6C766 /* tflix_launcher-web.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E0531CC9D12100E6C766 /* tflix_launcher-web.png */; };
+		C358E0561CC9F7CC00E6C766 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E0551CC9F7CC00E6C766 /* ProfileViewController.swift */; };
 		C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */; };
 		C3613DCB1CC997AF00D5D0E7 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */; };
 		C3613DCF1CC99FE300D5D0E7 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */; };
@@ -45,6 +52,13 @@
 		401F86B12DFA061DF3D4EFC1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechflixAndChill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9533CE466A22C0F6E7582F /* Pods-TechflixAndChill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechflixAndChill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TechflixAndChill/Pods-TechflixAndChill.debug.xcconfig"; sourceTree = "<group>"; };
+		C358E0491CC9BEF100E6C766 /* DVDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDViewController.swift; sourceTree = "<group>"; };
+		C358E04B1CC9C23600E6C766 /* DVDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDCell.swift; sourceTree = "<group>"; };
+		C358E04D1CC9C3D000E6C766 /* dvds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvds.png; sourceTree = "<group>"; };
+		C358E04E1CC9C3D000E6C766 /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
+		C358E0511CC9D0D100E6C766 /* blue_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_green.png; sourceTree = "<group>"; };
+		C358E0531CC9D12100E6C766 /* tflix_launcher-web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tflix_launcher-web.png"; sourceTree = "<group>"; };
+		C358E0551CC9F7CC00E6C766 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +136,10 @@
 				C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */,
 				C3613DD31CC9B0F600D5D0E7 /* NSObject_Rotten.h */,
 				C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */,
+				C358E04B1CC9C23600E6C766 /* DVDCell.swift */,
 				C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */,
+				C358E0491CC9BEF100E6C766 /* DVDViewController.swift */,
+				C358E0551CC9F7CC00E6C766 /* ProfileViewController.swift */,
 				C3A41FBE1CC9307600EFEE93 /* CreateAccountViewController.swift */,
 				C3A41FBC1CC9306400EFEE93 /* LoginViewController.swift */,
 				C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */,
@@ -130,6 +147,10 @@
 				C3A41FBA1CC92F4200EFEE93 /* BaseService.swift */,
 				C3A41F901CC92B8A00EFEE93 /* Main.storyboard */,
 				C3A41F931CC92B8A00EFEE93 /* Assets.xcassets */,
+				C358E0531CC9D12100E6C766 /* tflix_launcher-web.png */,
+				C358E0511CC9D0D100E6C766 /* blue_green.png */,
+				C358E04D1CC9C3D000E6C766 /* dvds.png */,
+				C358E04E1CC9C3D000E6C766 /* movies.png */,
 				C3A41F951CC92B8A00EFEE93 /* LaunchScreen.storyboard */,
 				C3A41F981CC92B8A00EFEE93 /* Info.plist */,
 				C3613DD21CC9B0F500D5D0E7 /* TechflixAndChill-Bridging-Header.h */,
@@ -283,7 +304,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C358E04F1CC9C3D000E6C766 /* dvds.png in Resources */,
+				C358E0521CC9D0D100E6C766 /* blue_green.png in Resources */,
+				C358E0501CC9C3D000E6C766 /* movies.png in Resources */,
 				C3A41F971CC92B8A00EFEE93 /* LaunchScreen.storyboard in Resources */,
+				C358E0541CC9D12100E6C766 /* tflix_launcher-web.png in Resources */,
 				C3A41F941CC92B8A00EFEE93 /* Assets.xcassets in Resources */,
 				C3A41F921CC92B8A00EFEE93 /* Main.storyboard in Resources */,
 			);
@@ -362,7 +387,10 @@
 				C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */,
 				C3613DD11CC9A54000D5D0E7 /* MovieCell.swift in Sources */,
 				C3A41FBD1CC9306400EFEE93 /* LoginViewController.swift in Sources */,
+				C358E04C1CC9C23600E6C766 /* DVDCell.swift in Sources */,
 				C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */,
+				C358E0561CC9F7CC00E6C766 /* ProfileViewController.swift in Sources */,
+				C358E04A1CC9BEF100E6C766 /* DVDViewController.swift in Sources */,
 				C3A41FBB1CC92F4200EFEE93 /* BaseService.swift in Sources */,
 				C3613DCF1CC99FE300D5D0E7 /* MoviesViewController.swift in Sources */,
 				C3613DCB1CC997AF00D5D0E7 /* HomeScreenViewController.swift in Sources */,
@@ -507,7 +535,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E9533CE466A22C0F6E7582F /* Pods-TechflixAndChill.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = "/Users/Scottie/Desktop/iPhone_techflix/TechflixAndChill/Pods/**";
 				INFOPLIST_FILE = TechflixAndChill/Info.plist;
@@ -524,7 +552,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1729FBFFB39AB15045C3ABE8 /* Pods-TechflixAndChill.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = /Users/Scottie/Desktop/iPhone_techflix/TechflixAndChill/Pods;
 				INFOPLIST_FILE = TechflixAndChill/Info.plist;

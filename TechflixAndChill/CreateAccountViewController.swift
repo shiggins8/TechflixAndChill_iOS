@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,6 +21,15 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blue_green.png")!)
+        
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.rePasswordTextField.delegate = self
+        self.usernameTextField.delegate = self
+        self.majorTextField.delegate = self
+        self.nameTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -45,6 +54,11 @@ class CreateAccountViewController: UIViewController {
         // A User is born.
         
         USER_REF.childByAppendingPath(uid).setValue(user)
+    }
+    
+    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+        userText.resignFirstResponder()
+        return true;
     }
     
 
@@ -87,7 +101,7 @@ class CreateAccountViewController: UIViewController {
 //                            var users = ["alanisawesome": alanisawesome, "gracehop": gracehop]
 //                            usersRef.setValue(users)
                             
-                            NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                            //NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                             print("Account created")
                             
                             let newUser = [
@@ -101,7 +115,7 @@ class CreateAccountViewController: UIViewController {
                             
                             //let users : [String : AnyObject] = [authData.uid: newUser]
                             
-                            USER_REF.childByAppendingPath(username).setValue(newUser)
+                            USER_REF.childByAppendingPath(authData.uid).setValue(newUser)
                             //FIREBASE_REF.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(users)
                             
                             

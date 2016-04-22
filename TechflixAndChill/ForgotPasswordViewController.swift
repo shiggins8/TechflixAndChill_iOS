@@ -9,12 +9,16 @@
 import UIKit
 import Firebase
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var retrievalEmailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blue_green.png")!)
+
+        self.retrievalEmailTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -36,8 +40,11 @@ class ForgotPasswordViewController: UIViewController {
             
         alert.addAction(action)
         self.presentViewController(alert, animated: true, completion: nil)
-        
-        
+    }
+    
+    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+        userText.resignFirstResponder()
+        return true;
     }
     
 

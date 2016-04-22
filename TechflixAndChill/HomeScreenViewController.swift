@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blue_green.png")!)
 
         // Do any additional setup after loading the view.
     }
@@ -32,4 +35,12 @@ class HomeScreenViewController: UIViewController {
     }
     */
 
+    @IBAction func logoutAction(sender: AnyObject) {
+        //CURRENT_USER.unauth()
+        
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "username")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

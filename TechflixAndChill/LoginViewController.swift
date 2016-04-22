@@ -9,13 +9,18 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var logoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blue_green.png")!)
+        
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -28,10 +33,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && CURRENT_USER.authData != nil
-        {
-            self.logoutButton.hidden = false
-        }
+        // Additional code
     }
     
     func errorAlert(title: String, message: String) {
@@ -42,6 +44,11 @@ class LoginViewController: UIViewController {
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+        userText.resignFirstResponder()
+        return true;
     }
     
 
@@ -66,11 +73,16 @@ class LoginViewController: UIViewController {
                 
                 if error == nil
                 {
+                    USER_REF.childByAppendingPath(authData.uid).observeSingleEventOfType(.Value, withBlock: { snapshot -> Void in
+                        let userFirebaseName = snapshot.childSnapshotForPath("username").value as? String
+                        NSUserDefaults.standardUserDefaults().setValue(userFirebaseName, forKey: "username")
+                        })
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                     
                     print("Logged in")
-                    self.logoutButton.hidden = false
                     self.performSegueWithIdentifier("homeScreenSegue", sender:sender)
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
                 }
                 else
                 {
@@ -94,24 +106,8 @@ class LoginViewController: UIViewController {
         }
         else
         {
-//            let alert = UIAlertController(title: "Error", message: "Enter email and password", preferredStyle: .Alert)
-//            
-//            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-//            
-//            alert.addAction(action)
-//            
-//            self.presentViewController(alert, animated: true, completion: nil)
             errorAlert("Oops!", message: "Don't forget to enter an email and a password")
         }
         
-    }
-    
-    @IBAction func logoutAction(sender: AnyObject) {
-        
-        CURRENT_USER.unauth()
-        
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
-        
-        self.logoutButton.hidden = true
     }
 }
