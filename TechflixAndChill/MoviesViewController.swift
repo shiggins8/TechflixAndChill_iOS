@@ -38,6 +38,19 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue,
+                                  sender: AnyObject?) {
+        
+        if segue.identifier == "ShowDetailMovieSegue" {
+            let detailViewController = segue.destinationViewController
+                as! MovieDetailViewController
+            
+            let myIndexPath = self.tableView.indexPathForSelectedRow
+            let row = myIndexPath?.row
+            detailViewController.movie = movies[row!]
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }

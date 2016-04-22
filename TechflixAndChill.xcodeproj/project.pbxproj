@@ -15,6 +15,7 @@
 		C358E0521CC9D0D100E6C766 /* blue_green.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E0511CC9D0D100E6C766 /* blue_green.png */; };
 		C358E0541CC9D12100E6C766 /* tflix_launcher-web.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E0531CC9D12100E6C766 /* tflix_launcher-web.png */; };
 		C358E0561CC9F7CC00E6C766 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E0551CC9F7CC00E6C766 /* ProfileViewController.swift */; };
+		C358E0581CCA0AF300E6C766 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E0571CCA0AF300E6C766 /* MovieDetailViewController.swift */; };
 		C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */; };
 		C3613DCB1CC997AF00D5D0E7 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */; };
 		C3613DCF1CC99FE300D5D0E7 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */; };
@@ -59,6 +60,7 @@
 		C358E0511CC9D0D100E6C766 /* blue_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_green.png; sourceTree = "<group>"; };
 		C358E0531CC9D12100E6C766 /* tflix_launcher-web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tflix_launcher-web.png"; sourceTree = "<group>"; };
 		C358E0551CC9F7CC00E6C766 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C358E0571CCA0AF300E6C766 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		C3613DC81CC988B000D5D0E7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				C3613DD31CC9B0F600D5D0E7 /* NSObject_Rotten.h */,
 				C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */,
 				C358E04B1CC9C23600E6C766 /* DVDCell.swift */,
+				C358E0571CCA0AF300E6C766 /* MovieDetailViewController.swift */,
 				C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */,
 				C358E0491CC9BEF100E6C766 /* DVDViewController.swift */,
 				C358E0551CC9F7CC00E6C766 /* ProfileViewController.swift */,
@@ -387,6 +390,7 @@
 				C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */,
 				C3613DD11CC9A54000D5D0E7 /* MovieCell.swift in Sources */,
 				C3A41FBD1CC9306400EFEE93 /* LoginViewController.swift in Sources */,
+				C358E0581CCA0AF300E6C766 /* MovieDetailViewController.swift in Sources */,
 				C358E04C1CC9C23600E6C766 /* DVDCell.swift in Sources */,
 				C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */,
 				C358E0561CC9F7CC00E6C766 /* ProfileViewController.swift in Sources */,
