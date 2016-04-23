@@ -62,6 +62,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     @IBAction func retrievePasswordAction(sender: AnyObject) {
         
         let desiredEmail = self.retrievalEmailTextField.text
+        print(desiredEmail)
         FIREBASE_REF.resetPasswordForUser(desiredEmail, withCompletionBlock: { error in
             if error != nil {
                 self.errorAlert("Oops", message: error.description)

@@ -23,6 +23,8 @@ class MovieDetailViewController: UIViewController {
         movieTitleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
         
+        print(movie["title"] as? String)
+        
         let poster = movie["posters"] as! NSDictionary
         let posterUrl = poster["thumbnail"] as! String
         thumbnailImageView.setImageWithURL(NSURL(string: posterUrl)!)
