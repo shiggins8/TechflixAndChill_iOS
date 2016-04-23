@@ -13,11 +13,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     var movies: [NSDictionary] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
         
         let url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=16&country=us&apikey=yedukp76ffytfuy24zsqk7f5"
         
@@ -29,7 +31,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             
             self.tableView.reloadData()
         
-    }
+        }
+        
+//        indicator.stopAnimating()
+//        indicator.hidesWhenStopped = true
         // Do any additional setup after loading the view.
     }
 

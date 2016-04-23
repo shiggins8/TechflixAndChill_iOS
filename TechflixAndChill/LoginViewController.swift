@@ -76,22 +76,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 else{
                     // If authentication failed then show a message to the console with a short description.
                     // In case that the error is a user fallback, then show the password alert view.
-                    print(evalPolicyError?.localizedDescription)
+                    //print(evalPolicyError?.localizedDescription)
                     
                     switch evalPolicyError!.code {
                         
                     case LAError.SystemCancel.rawValue:
-                        print("Authentication was cancelled by the system")
+                        self.errorAlert("Oops", message: "Authentication was cancelled by the system")
                         
                     case LAError.UserCancel.rawValue:
+                        //self.errorAlert("Oops", message: "Authentication was cancelled by the user")
                         print("Authentication was cancelled by the user")
                         
                     case LAError.UserFallback.rawValue:
-                        print("User selected to enter custom password")
+                        self.errorAlert("Oops", message: "User selected to enter custom password")
                         //self.showPasswordAlert()
                         
                     default:
-                        print("Authentication failed")
+                        self.errorAlert("Oops", message: "Authentication failed")
                         //self.showPasswordAlert()
                     }
                 }
@@ -103,18 +104,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             switch error!.code{
                 
             case LAError.TouchIDNotEnrolled.rawValue:
-                print("TouchID is not enrolled")
+                self.errorAlert("Oops", message: "TouchID is not enrolled")
                 
             case LAError.PasscodeNotSet.rawValue:
-                print("A passcode has not been set")
+                self.errorAlert("Oops", message: "A passcode has not been set")
                 
             default:
                 // The LAError.TouchIDNotAvailable case.
-                print("TouchID not available")
+                self.errorAlert("Oops", message: "TouchID not available")
             }
             
             // Optionally the error description can be displayed on the console.
-            print(error?.localizedDescription)
+            //print(error?.localizedDescription)
             
             // Show the custom alert view to allow users to enter the password.
             //self.showPasswordAlert()
