@@ -9,8 +9,8 @@
 import UIKit
 
 class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var tableView: UITableView!
 
+    @IBOutlet var tableView: UITableView!
     var movies: [NSDictionary] = []
     
     override func viewDidLoad() {
@@ -37,6 +37,18 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "ShowDetailDVDSegue" {
+            let destinationNavigationController = segue.destinationViewController as! UINavigationController
+            let detailViewController = destinationNavigationController.topViewController as! MovieDetailViewController
+            
+            let myIndexPath = self.tableView.indexPathForSelectedRow
+            let row = myIndexPath?.row
+            detailViewController.movie = movies[row!]
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

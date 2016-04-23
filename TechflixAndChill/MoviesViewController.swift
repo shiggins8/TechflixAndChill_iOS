@@ -32,9 +32,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             self.tableView.reloadData()
         
         }
-        
-//        indicator.stopAnimating()
-//        indicator.hidesWhenStopped = true
         // Do any additional setup after loading the view.
     }
 
@@ -43,8 +40,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue,
-                                  sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "ShowDetailMovieSegue" {
             let destinationNavigationController = segue.destinationViewController as! UINavigationController
@@ -88,7 +84,5 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
 
 }

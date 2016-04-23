@@ -530,6 +530,11 @@
                                 <action selector="unwindAction:" destination="P7d-2T-tNY" id="4Nb-wb-cX4"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Rate Movie" id="ind-qD-jcI">
+                            <connections>
+                                <segue destination="5vn-kE-cZP" kind="show" id="lJs-0Y-SdF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="movieTitleLabel" destination="cAr-GD-Shs" id="IWk-6r-urv"/>
@@ -540,6 +545,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zc6-cD-gkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5691" y="-363"/>
+        </scene>
+        <!--Rating View Controller-->
+        <scene sceneID="J3I-zG-let">
+            <objects>
+                <viewController id="mnd-PI-VsW" customClass="RatingViewController" customModule="TechflixAndChill" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3PL-Ah-hE9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kq4-ec-Vze"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nmA-Xz-SeC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pvp-lt-2h3">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="31W-na-m2J"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="CLF-x7-Yfb"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eB9-QK-L4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7268" y="-363"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="hL9-Bj-WKP">
@@ -788,6 +815,7 @@
                                     <outlet property="posterImageView" destination="mVR-5P-3dY" id="y6V-qZ-Fvt"/>
                                     <outlet property="synopsisLabel" destination="ra5-bq-Kh9" id="Ji5-Ut-wRw"/>
                                     <outlet property="titleLabel" destination="zJp-iw-5GA" id="NvT-5l-NmW"/>
+                                    <segue destination="pJ8-Kp-nWV" kind="show" identifier="ShowDetailDVDSegue" id="qce-hm-y5r"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1108,6 +1136,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R05-8H-a3x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.56078431370000004" green="0.69411764710000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1118,9 +1147,31 @@
             </objects>
             <point key="canvasLocation" x="4879" y="-363"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aCh-5d-zh9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5vn-kE-cZP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WtE-rw-jUp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.56078431370000004" green="0.69411764710000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mnd-PI-VsW" kind="relationship" relationship="rootViewController" id="kTs-D2-MUu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkl-eY-gux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6456" y="-363"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dvds.png" width="20" height="20"/>
         <image name="movies.png" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="O5o-D4-GH3"/>
+    </inferredMetricsTieBreakers>
 </document>
