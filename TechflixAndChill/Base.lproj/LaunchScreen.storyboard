@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,31 +18,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Scott Higgins and NIraj Suresh" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frU-O0-ByT">
-                                <rect key="frame" x="231" y="267" width="138" height="65"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="RLZ-po-pwp">
+                                <rect key="frame" x="219" y="88" width="162" height="156"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="138" id="L2p-6E-oCX"/>
+                                    <constraint firstAttribute="width" constant="162" id="Xsu-c6-fJB"/>
+                                    <constraint firstAttribute="width" secondItem="RLZ-po-pwp" secondAttribute="height" multiplier="27:26" id="esM-SO-mc8"/>
+                                    <constraint firstAttribute="height" constant="156" id="yJ4-vh-iV7"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xsu-c6-fJB"/>
+                                        <exclude reference="esM-SO-mc8"/>
+                                        <exclude reference="yJ4-vh-iV7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Xsu-c6-fJB"/>
+                                        <include reference="esM-SO-mc8"/>
+                                        <include reference="yJ4-vh-iV7"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By Scott Higgins and Niraj Suresh" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frU-O0-ByT">
+                                <rect key="frame" x="111" y="267" width="258" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="RLZ-po-pwp">
-                                <rect key="frame" x="219" y="88" width="162" height="156"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="162" id="uf5-Lr-fkQ"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="frU-O0-ByT" firstAttribute="top" secondItem="RLZ-po-pwp" secondAttribute="bottom" constant="23" id="7qC-Sa-WG8"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="frU-O0-ByT" secondAttribute="bottom" constant="268" id="C49-Ij-HcD"/>
-                            <constraint firstItem="frU-O0-ByT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="OhF-Vm-xUn"/>
-                            <constraint firstItem="frU-O0-ByT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QjI-uT-85A"/>
-                            <constraint firstItem="RLZ-po-pwp" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="68" id="YsA-s6-EpC"/>
-                            <constraint firstItem="RLZ-po-pwp" firstAttribute="centerX" secondItem="frU-O0-ByT" secondAttribute="centerX" id="lu2-gP-9vU"/>
+                            <constraint firstItem="frU-O0-ByT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5z9-TK-ca0"/>
+                            <constraint firstItem="frU-O0-ByT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Sxn-FX-gxE"/>
+                            <constraint firstItem="RLZ-po-pwp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xde-MJ-248"/>
+                            <constraint firstItem="RLZ-po-pwp" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="66" id="sFe-kd-VQi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xde-MJ-248"/>
+                                <exclude reference="sFe-kd-VQi"/>
+                                <exclude reference="5z9-TK-ca0"/>
+                                <exclude reference="Sxn-FX-gxE"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Xde-MJ-248"/>
+                                <include reference="sFe-kd-VQi"/>
+                                <include reference="5z9-TK-ca0"/>
+                                <include reference="Sxn-FX-gxE"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

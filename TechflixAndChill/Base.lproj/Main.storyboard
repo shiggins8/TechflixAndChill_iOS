@@ -258,7 +258,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="125" id="tKZ-sR-xI7" customClass="MovieCell" customModule="TechflixAndChill" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="125"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKZ-sR-xI7" id="YjX-mK-HdI">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="124.5"/>
@@ -300,7 +300,7 @@
                                     <outlet property="moviePosterImage" destination="D30-FC-8hH" id="2PG-V3-9kt"/>
                                     <outlet property="synopsisLabel" destination="0op-p9-vnb" id="6l6-t5-rO8"/>
                                     <outlet property="titleLabel" destination="ov7-CU-YQW" id="mi2-ad-uuB"/>
-                                    <segue destination="P7d-2T-tNY" kind="show" identifier="ShowDetailMovieSegue" id="O5o-D4-GH3"/>
+                                    <segue destination="pJ8-Kp-nWV" kind="show" identifier="ShowDetailMovieSegue" id="O5o-D4-GH3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -444,7 +444,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Ost-PT-6gb">
                             <connections>
                                 <action selector="unwindAction:" destination="P7d-2T-tNY" id="4Nb-wb-cX4"/>
-                                <segue destination="jbu-4v-1RF" kind="show" identifier="BackToMoviesSegue" id="eUt-LL-ET8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -456,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zc6-cD-gkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4879.5" y="-363"/>
+            <point key="canvasLocation" x="5691" y="-363"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="hL9-Bj-WKP">
@@ -1017,12 +1016,27 @@
             </objects>
             <point key="canvasLocation" x="577" y="-576"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A1p-pD-8BM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pJ8-Kp-nWV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R05-8H-a3x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P7d-2T-tNY" kind="relationship" relationship="rootViewController" id="7Bp-wh-wDy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJl-no-lYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4879" y="-363"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dvds.png" width="20" height="20"/>
         <image name="movies.png" width="20" height="20"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="eUt-LL-ET8"/>
-    </inferredMetricsTieBreakers>
 </document>

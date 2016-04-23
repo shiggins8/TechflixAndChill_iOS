@@ -42,8 +42,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                                   sender: AnyObject?) {
         
         if segue.identifier == "ShowDetailMovieSegue" {
-            let detailViewController = segue.destinationViewController
-                as! MovieDetailViewController
+            let destinationNavigationController = segue.destinationViewController as! UINavigationController
+            let detailViewController = destinationNavigationController.topViewController as! MovieDetailViewController
             
             let myIndexPath = self.tableView.indexPathForSelectedRow
             let row = myIndexPath?.row
