@@ -38,8 +38,8 @@ class HomeScreenViewController: UIViewController {
     @IBAction func logoutAction(sender: AnyObject) {
         //CURRENT_USER.unauth()
         
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "username")
+        //NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
+        //NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "username")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

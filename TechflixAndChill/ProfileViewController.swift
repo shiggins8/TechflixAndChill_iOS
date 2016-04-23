@@ -92,6 +92,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         USER_REF.childByAppendingPath(prefs.stringForKey("uid")).setValue(newUser)
         
+        prefs.setValue(self.usernameTextField.text! as String, forKey: "username")
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

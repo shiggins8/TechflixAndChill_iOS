@@ -20,6 +20,7 @@
 		C3613DCB1CC997AF00D5D0E7 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCA1CC997AF00D5D0E7 /* HomeScreenViewController.swift */; };
 		C3613DCF1CC99FE300D5D0E7 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */; };
 		C3613DD11CC9A54000D5D0E7 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */; };
+		C38E4E431CCBE58700D85BDC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38E4E421CCBE58700D85BDC /* LocalAuthentication.framework */; };
 		C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */; };
 		C3A41F921CC92B8A00EFEE93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A41F901CC92B8A00EFEE93 /* Main.storyboard */; };
 		C3A41F941CC92B8A00EFEE93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A41F931CC92B8A00EFEE93 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		C3613DD21CC9B0F500D5D0E7 /* TechflixAndChill-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TechflixAndChill-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3613DD31CC9B0F600D5D0E7 /* NSObject_Rotten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObject_Rotten.h; sourceTree = "<group>"; };
+		C38E4E421CCBE58700D85BDC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		C3A41F891CC92B8A00EFEE93 /* TechflixAndChill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechflixAndChill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A41F8C1CC92B8A00EFEE93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A41F911CC92B8A00EFEE93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38E4E431CCBE58700D85BDC /* LocalAuthentication.framework in Frameworks */,
 				2C39112125D20728163A6B4C /* Pods_TechflixAndChill.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +185,7 @@
 		E81851BAECD6B7A525CA0F59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C38E4E421CCBE58700D85BDC /* LocalAuthentication.framework */,
 				401F86B12DFA061DF3D4EFC1 /* Pods.framework */,
 				86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */,
 			);
