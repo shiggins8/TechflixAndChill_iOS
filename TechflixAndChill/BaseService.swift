@@ -15,6 +15,21 @@ let FIREBASE_REF = Firebase(url: BASE_URL)
 
 let USER_REF = Firebase(url: "\(BASE_URL)/users")
 
+let RATINGSBYUSER_REF = Firebase(url: "\(BASE_URL)/ratingsbyuser")
+
+let RATINGSBYMAJOR_REF = Firebase(url: "\(BASE_URL)/ratingsbymajor")
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 
 
 //var CURRENT_USER: Firebase

@@ -21,6 +21,8 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         self.retrievalEmailTextField.delegate = self
 
         // Do any additional setup after loading the view.
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +44,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
         return true;
     }

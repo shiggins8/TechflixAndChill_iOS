@@ -27,6 +27,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         {
             authenticateUser()
         }
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -146,7 +148,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 {
                     USER_REF.childByAppendingPath(authData.uid).observeSingleEventOfType(.Value, withBlock: { snapshot -> Void in
                         let userFirebaseName = snapshot.childSnapshotForPath("username").value as? String
+                        let userMajor = snapshot.childSnapshotForPath("major").value as? String
                         NSUserDefaults.standardUserDefaults().setValue(userFirebaseName, forKey: "username")
+                        NSUserDefaults.standardUserDefaults().setValue(userMajor, forKey: "major")
                         })
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                     

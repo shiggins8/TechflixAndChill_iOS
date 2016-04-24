@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C39112125D20728163A6B4C /* Pods_TechflixAndChill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */; };
 		C32C4DD51CCC07FB00570F8F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C4DD41CCC07FB00570F8F /* RatingViewController.swift */; };
+		C32C4DD71CCC221700570F8F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C4DD61CCC221700570F8F /* RatingControl.swift */; };
 		C358E04A1CC9BEF100E6C766 /* DVDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E0491CC9BEF100E6C766 /* DVDViewController.swift */; };
 		C358E04C1CC9C23600E6C766 /* DVDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E04B1CC9C23600E6C766 /* DVDCell.swift */; };
 		C358E04F1CC9C3D000E6C766 /* dvds.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E04D1CC9C3D000E6C766 /* dvds.png */; };
@@ -55,6 +56,7 @@
 		86A2692836B948AAC79DF0AA /* Pods_TechflixAndChill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechflixAndChill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9533CE466A22C0F6E7582F /* Pods-TechflixAndChill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechflixAndChill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TechflixAndChill/Pods-TechflixAndChill.debug.xcconfig"; sourceTree = "<group>"; };
 		C32C4DD41CCC07FB00570F8F /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		C32C4DD61CCC221700570F8F /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C358E0491CC9BEF100E6C766 /* DVDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDViewController.swift; sourceTree = "<group>"; };
 		C358E04B1CC9C23600E6C766 /* DVDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDCell.swift; sourceTree = "<group>"; };
 		C358E04D1CC9C3D000E6C766 /* dvds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvds.png; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				C3613DD01CC9A54000D5D0E7 /* MovieCell.swift */,
 				C358E04B1CC9C23600E6C766 /* DVDCell.swift */,
 				C358E0571CCA0AF300E6C766 /* MovieDetailViewController.swift */,
+				C32C4DD61CCC221700570F8F /* RatingControl.swift */,
 				C32C4DD41CCC07FB00570F8F /* RatingViewController.swift */,
 				C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */,
 				C358E0491CC9BEF100E6C766 /* DVDViewController.swift */,
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32C4DD71CCC221700570F8F /* RatingControl.swift in Sources */,
 				C3A41FBF1CC9307600EFEE93 /* CreateAccountViewController.swift in Sources */,
 				C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */,
 				C3613DD11CC9A54000D5D0E7 /* MovieCell.swift in Sources */,

@@ -32,6 +32,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         self.nameTextField.delegate = self
 
         // Do any additional setup after loading the view.
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +58,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
     
-    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
         return true;
     }
@@ -93,15 +95,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                         {
                             print(authData.uid)
                             
-//                            var alanisawesome = ["full_name": "Alan Turing", "date_of_birth": "June 23, 1912"]
-//                            var gracehop = ["full_name": "Grace Hopper", "date_of_birth": "December 9, 1906"]
-//                            
-//                            var usersRef = ref.childByAppendingPath("users")
-//                            
-//                            var users = ["alanisawesome": alanisawesome, "gracehop": gracehop]
-//                            usersRef.setValue(users)
-                            
-                            //NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                             print("Account created")
                             
                             let newUser = [
@@ -113,16 +106,13 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                                 "major": major
                             ]
                             
-                            //let users : [String : AnyObject] = [authData.uid: newUser]
-                            
                             USER_REF.childByAppendingPath(authData.uid).setValue(newUser)
-                            //FIREBASE_REF.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(users)
-                            
                             
                             self.dismissViewControllerAnimated(true, completion: nil)
                         }
                         else
                         {
+                            self.errorAlert("Error", message: error.description)
                             print(error)
                         }
                         

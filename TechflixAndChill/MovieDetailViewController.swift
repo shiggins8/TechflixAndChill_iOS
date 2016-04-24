@@ -44,6 +44,16 @@ class MovieDetailViewController: UIViewController {
         return UIInterfaceOrientationMask.Portrait
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "RateMovieSegue" {
+            let destinationNavigationController = segue.destinationViewController as! UINavigationController
+            let ratingViewController = destinationNavigationController.topViewController as! RatingViewController
+            
+            ratingViewController.movie = movie
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -58,4 +68,15 @@ class MovieDetailViewController: UIViewController {
     @IBAction func unwindAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func unwindToMovieDetails(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.sourceViewController as? RatingViewController {
+            // Add a new meal.
+            print("should be updating rating")
+            let temp = sourceViewController.rating
+            print(temp)
+        }
+    }
+    
 }

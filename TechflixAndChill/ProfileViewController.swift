@@ -45,6 +45,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
 
         // Do any additional setup after loading the view.
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,6 +95,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         USER_REF.childByAppendingPath(prefs.stringForKey("uid")).setValue(newUser)
         
         prefs.setValue(self.usernameTextField.text! as String, forKey: "username")
+        
+        prefs.setValue(self.majorTextField.text! as String, forKey: "major")
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
