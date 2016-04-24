@@ -30,6 +30,16 @@ extension UIViewController {
     }
 }
 
+extension String {
+    func replace(string:String, replacement:String) -> String {
+        return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
+    
+    func removeWhitespace() -> String {
+        return self.replace(" ", replacement: "+")
+    }
+}
+
 
 
 //var CURRENT_USER: Firebase

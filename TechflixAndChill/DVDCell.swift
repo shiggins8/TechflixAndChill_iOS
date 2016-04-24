@@ -16,6 +16,9 @@ class DVDCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        titleLabel.font = UIFont.boldSystemFontOfSize(17)
+        synopsisLabel.font = UIFont.italicSystemFontOfSize(16)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

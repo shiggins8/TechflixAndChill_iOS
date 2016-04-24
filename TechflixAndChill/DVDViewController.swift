@@ -61,10 +61,17 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         let movie = movies[indexPath.row]
         
-        
-        
         cell.titleLabel.text = movie["title"] as? String
-        cell.synopsisLabel.text = movie["synopsis"] as? String
+        
+        let movieSynopsis = movie["synopsis"] as? String
+        
+        if movieSynopsis == ""
+        {
+            cell.synopsisLabel.text = "No synopsis available"
+        } else
+        {
+            cell.synopsisLabel.text = movie["synopsis"] as? String
+        }
         
         let poster = movie["posters"] as! NSDictionary
         let posterUrl = poster["thumbnail"] as! String

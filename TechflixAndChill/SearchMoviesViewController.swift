@@ -1,40 +1,29 @@
 //
-//  MoviesViewController.swift
+//  SearchMoviesViewController.swift
 //  TechflixAndChill
 //
-//  Created by Scott Higgins on 4/21/16.
+//  Created by Scott Higgins on 4/24/16.
 //  Copyright © 2016 Scott Higgins. All rights reserved.
 //
 
 import UIKit
 
-class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet weak var tableView: UITableView!
-    var movies: [NSDictionary] = []
+class SearchMoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var movieTitleSearchTextField: UITextField!
+    
+    var movies: [NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.rowHeight = 120
         
-        
-        let url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=16&country=us&apikey=yedukp76ffytfuy24zsqk7f5"
-        
-        let request = NSURLRequest(URL: NSURL(string: url)!)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-            let object = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as! NSDictionary
-
-            self.movies = object["movies"] as! [NSDictionary]
-            
-            self.tableView.reloadData()
-        
-        }
-        // Do any additional setup after loading the view.
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,7 +31,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "ShowDetailMovieSegue" {
+        if segue.identifier == "ShowDetailMovisSearchSegue" {
             let destinationNavigationController = segue.destinationViewController as! UINavigationController
             let detailViewController = destinationNavigationController.topViewController as! MovieDetailViewController
             
@@ -82,15 +71,41 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Mark: Action Buttons
+    
+    @IBAction func searchMovieAction(sender: AnyObject) {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let movieTitle = self.movieTitleSearchTextField.text! as String
+        
+        let searchTitle = movieTitle.removeWhitespace()
+        
+        let url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=\(searchTitle)&page_limit=15&page=1&apikey=yedukp76ffytfuy24zsqk7f5"
+        
+        let request = NSURLRequest(URL: NSURL(string: url)!)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            let object = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as! NSDictionary
+            
+            self.movies = object["movies"] as! [NSDictionary]
+            
+            self.tableView.reloadData()
+            
+        }
+        
     }
-    */
-
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
