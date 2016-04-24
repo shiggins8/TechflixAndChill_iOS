@@ -39,7 +39,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Additional code
+        authenticateUser()
+        
     }
     
     func errorAlert(title: String, message: String) {
