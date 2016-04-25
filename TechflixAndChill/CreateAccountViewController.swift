@@ -9,18 +9,30 @@
 import UIKit
 import Firebase
 
-class CreateAccountViewController: UIViewController, UITextFieldDelegate {
+class CreateAccountViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var majorTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var majorPicker: UIPickerView!
+    @IBOutlet weak var majorPickerInstructionLabel: UILabel!
+    
+    var pickerData: [String] = [String]()
+    
+    var major: String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Input data into the Array:
+        pickerData = TECH_MAJORS
+        
+        // Connect data:
+        self.majorPicker.delegate = self
+        self.majorPicker.dataSource = self
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blue_green.png")!)
         
@@ -28,10 +40,11 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
         self.rePasswordTextField.delegate = self
         self.usernameTextField.delegate = self
-        self.majorTextField.delegate = self
         self.nameTextField.delegate = self
 
         // Do any additional setup after loading the view.
+        
+        majorPickerInstructionLabel.textColor = UIColor.grayColor()
         
         self.hideKeyboardWhenTappedAround()
     }
@@ -39,6 +52,28 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // The number of columns of data
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // The number of rows of data
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    // Catpure the picker view selection
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        major = pickerData[row] 
     }
     
     func errorAlert(title: String, message: String) {
@@ -81,7 +116,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         let rePassword = self.rePasswordTextField.text
         let username = self.usernameTextField.text
         let name = self.nameTextField.text
-        let major = self.majorTextField.text
         
         if email != "" && password != "" && password == rePassword
         {
@@ -103,8 +137,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                                 "password": password,
                                 "username": username,
                                 "name": name,
-                                "major": major
-                            ]
+                                "major": self.major
+                            ] as [String : AnyObject!]
                             
                             USER_REF.childByAppendingPath(authData.uid).setValue(newUser)
                             

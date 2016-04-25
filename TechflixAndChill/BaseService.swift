@@ -19,6 +19,41 @@ let RATINGSBYUSER_REF = Firebase(url: "\(BASE_URL)/ratingsbyuser")
 
 let RATINGSBYMAJOR_REF = Firebase(url: "\(BASE_URL)/ratingsbymajor")
 
+let TECH_MAJORS : [String] = ["Aerospace Engineering",
+    "Applied Language and Intercultural Studies",
+    "Applied Mathematics",
+    "Applied Physics",
+    "Architecture",
+    "Biochemistry",
+    "Biology",
+    "Biomedical Engineering",
+    "Building Construction",
+    "Business Administration",
+    "Chemical Engineering",
+    "Chemistry",
+    "Civil Engineering",
+    "Computational Media",
+    "Computer Science",
+    "Discrete Mathematics",
+    "Earth and Atmospheric Sciences",
+    "Economics and International Affairs",
+    "Economics",
+    "Electrical Engineering",
+    "Environmental Engineering",
+    "Global Economics and Modern Languages",
+    "History, Technology, and Society",
+    "Industrial Design",
+    "Industrial Engineering",
+    "International Affairs and Modern Languages",
+    "International Affairs",
+    "Literature, Media, and Communication",
+    "Materials Science and Engineering",
+    "Mechanical Engineering",
+    "Nuclear Engineering",
+    "Physics",
+    "Psychology",
+    "Public Policy"]
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))

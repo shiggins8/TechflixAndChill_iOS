@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SearchMoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchMoviesViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +21,14 @@ class SearchMoviesViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         self.tableView.rowHeight = 120
+        self.movieTitleSearchTextField.delegate = self
+        
+        self.hideKeyboardWhenTappedAround()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        self.tableView.reloadData()
         
     }
     
@@ -29,9 +38,15 @@ class SearchMoviesViewController: UIViewController, UITableViewDataSource, UITab
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
+        userText.resignFirstResponder()
+        return true;
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "ShowDetailMovisSearchSegue" {
+        print("first segue check")
+        if segue.identifier == "ShowDetailMoviesSearchSegue" {
+            print("Preparing for segue")
             let destinationNavigationController = segue.destinationViewController as! UINavigationController
             let detailViewController = destinationNavigationController.topViewController as! MovieDetailViewController
             
@@ -75,8 +90,16 @@ class SearchMoviesViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBAction func searchMovieAction(sender: AnyObject) {
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.allowsSelection = true
+        
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .WhiteLarge)
+        activityIndicator.frame.origin.x = 180
+        activityIndicator.frame.origin.y = 250
+        activityIndicator.color = UIColor.blueColor()
+        activityIndicator.hidden = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
         
         let movieTitle = self.movieTitleSearchTextField.text! as String
         
@@ -92,20 +115,17 @@ class SearchMoviesViewController: UIViewController, UITableViewDataSource, UITab
             
             self.tableView.reloadData()
             
+            activityIndicator.stopAnimating()
+            
+        }
+        
+        self.tableView.allowsSelection = true
+        
+        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            print("line was selected")
+            performSegueWithIdentifier("ShowDetailMoviesSearchSegue", sender: indexPath.row)
         }
         
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

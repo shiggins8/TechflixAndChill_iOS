@@ -123,7 +123,8 @@ class RatingViewController: UIViewController, UITextFieldDelegate {
             let newRating = [
                 "title": movie["title"],
                 "commentRating": self.commentRatingTextField.text,
-                "numberRating": ratingControl.rating
+                "numberRating": ratingControl.rating,
+                "movieID": movie["id"]
             ] as [String : AnyObject!]
             
             let username = NSUserDefaults.standardUserDefaults().stringForKey("username")! as String

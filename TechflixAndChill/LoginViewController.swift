@@ -22,11 +22,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-
-        if NSUserDefaults.standardUserDefaults().stringForKey("uid") != nil
-        {
-            authenticateUser()
-        }
         
         self.hideKeyboardWhenTappedAround()
     }
@@ -39,7 +34,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        authenticateUser()
+        if NSUserDefaults.standardUserDefaults().stringForKey("uid") != nil
+        {
+            authenticateUser()
+        }
         
     }
     

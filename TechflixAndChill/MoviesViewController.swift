@@ -9,7 +9,7 @@
 import UIKit
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var movies: [NSDictionary] = []
     
@@ -19,6 +19,15 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .WhiteLarge)
+        activityIndicator.frame.origin.x = 180
+        activityIndicator.frame.origin.y = 250
+        activityIndicator.color = UIColor.blueColor()
+        activityIndicator.hidden = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
         
         
         let url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=16&country=us&apikey=yedukp76ffytfuy24zsqk7f5"
@@ -30,9 +39,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             self.movies = object["movies"] as! [NSDictionary]
             
             self.tableView.reloadData()
+            
+            activityIndicator.stopAnimating()
         
         }
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +80,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         if movieSynopsis == ""
         {
             cell.synopsisLabel.text = "No synopsis available"
+            
         } else
         {
             cell.synopsisLabel.text = movie["synopsis"] as? String

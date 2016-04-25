@@ -1,23 +1,26 @@
 //
-//  DVDViewController.swift
+//  RecommendationsViewController.swift
 //  TechflixAndChill
 //
-//  Created by Scott Higgins on 4/21/16.
+//  Created by Scott Higgins on 4/24/16.
 //  Copyright © 2016 Scott Higgins. All rights reserved.
 //
 
 import UIKit
 
-class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RecommendationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     var movies: [NSDictionary] = []
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.tableView.rowHeight = 120
         
         let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .WhiteLarge)
         activityIndicator.frame.origin.x = 180
@@ -28,7 +31,8 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)
         
-        let url = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?page_limit=16&page=1&country=us&apikey=yedukp76ffytfuy24zsqk7f5"
+        // TODO : Ensure that this one queries similar movies, not other ones
+        let url = "http://api.rottentomatoes.com/api/public/v1.0/movies/10295/similar.json?limit=5&apikey=yedukp76ffytfuy24zsqk7f5"
         
         let request = NSURLRequest(URL: NSURL(string: url)!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
@@ -41,18 +45,17 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
             activityIndicator.stopAnimating()
             
         }
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-        if segue.identifier == "ShowDetailDVDSegue" {
+        
+        if segue.identifier == "RecMovieDetailsSegue" {
             let destinationNavigationController = segue.destinationViewController as! UINavigationController
             let detailViewController = destinationNavigationController.topViewController as! MovieDetailViewController
             
@@ -68,7 +71,7 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("DVDCell") as! DVDCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as! MovieCell
         
         let movie = movies[indexPath.row]
         
@@ -79,6 +82,7 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         if movieSynopsis == ""
         {
             cell.synopsisLabel.text = "No synopsis available"
+            
         } else
         {
             cell.synopsisLabel.text = movie["synopsis"] as? String
@@ -87,20 +91,20 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let poster = movie["posters"] as! NSDictionary
         let posterUrl = poster["thumbnail"] as! String
         
-        cell.posterImageView.setImageWithURL(NSURL(string: posterUrl)!)
+        cell.moviePosterImage.setImageWithURL(NSURL(string: posterUrl)!)
         
         return cell
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
