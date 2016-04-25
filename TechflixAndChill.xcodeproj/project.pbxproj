@@ -11,7 +11,8 @@
 		C3160CEE1CCD8C250077F121 /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3160CED1CCD8C250077F121 /* RecommendationsViewController.swift */; };
 		C32C4DD51CCC07FB00570F8F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C4DD41CCC07FB00570F8F /* RatingViewController.swift */; };
 		C32C4DD71CCC221700570F8F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C4DD61CCC221700570F8F /* RatingControl.swift */; };
-		C32C4DD91CCC8A3200570F8F /* SearchMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C4DD81CCC8A3200570F8F /* SearchMoviesViewController.swift */; };
+		C3462F531CCDBFC900FBBD9F /* SearchInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3462F521CCDBFC900FBBD9F /* SearchInstructionsViewController.swift */; };
+		C3462F551CCDC1EB00FBBD9F /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3462F541CCDC1EB00FBBD9F /* SearchResultsViewController.swift */; };
 		C358E04A1CC9BEF100E6C766 /* DVDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E0491CC9BEF100E6C766 /* DVDViewController.swift */; };
 		C358E04C1CC9C23600E6C766 /* DVDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E04B1CC9C23600E6C766 /* DVDCell.swift */; };
 		C358E04F1CC9C3D000E6C766 /* dvds.png in Resources */ = {isa = PBXBuildFile; fileRef = C358E04D1CC9C3D000E6C766 /* dvds.png */; };
@@ -60,7 +61,8 @@
 		C3160CED1CCD8C250077F121 /* RecommendationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
 		C32C4DD41CCC07FB00570F8F /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		C32C4DD61CCC221700570F8F /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
-		C32C4DD81CCC8A3200570F8F /* SearchMoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMoviesViewController.swift; sourceTree = "<group>"; };
+		C3462F521CCDBFC900FBBD9F /* SearchInstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInstructionsViewController.swift; sourceTree = "<group>"; };
+		C3462F541CCDC1EB00FBBD9F /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		C358E0491CC9BEF100E6C766 /* DVDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDViewController.swift; sourceTree = "<group>"; };
 		C358E04B1CC9C23600E6C766 /* DVDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDCell.swift; sourceTree = "<group>"; };
 		C358E04D1CC9C3D000E6C766 /* dvds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvds.png; sourceTree = "<group>"; };
@@ -151,10 +153,11 @@
 				C358E0571CCA0AF300E6C766 /* MovieDetailViewController.swift */,
 				C32C4DD61CCC221700570F8F /* RatingControl.swift */,
 				C32C4DD41CCC07FB00570F8F /* RatingViewController.swift */,
+				C3462F521CCDBFC900FBBD9F /* SearchInstructionsViewController.swift */,
 				C3613DCE1CC99FE300D5D0E7 /* MoviesViewController.swift */,
+				C3462F541CCDC1EB00FBBD9F /* SearchResultsViewController.swift */,
 				C358E0491CC9BEF100E6C766 /* DVDViewController.swift */,
 				C3160CED1CCD8C250077F121 /* RecommendationsViewController.swift */,
-				C32C4DD81CCC8A3200570F8F /* SearchMoviesViewController.swift */,
 				C358E0551CC9F7CC00E6C766 /* ProfileViewController.swift */,
 				C3A41FBE1CC9307600EFEE93 /* CreateAccountViewController.swift */,
 				C3A41FBC1CC9306400EFEE93 /* LoginViewController.swift */,
@@ -399,7 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C32C4DD71CCC221700570F8F /* RatingControl.swift in Sources */,
-				C32C4DD91CCC8A3200570F8F /* SearchMoviesViewController.swift in Sources */,
+				C3462F551CCDC1EB00FBBD9F /* SearchResultsViewController.swift in Sources */,
 				C3A41FBF1CC9307600EFEE93 /* CreateAccountViewController.swift in Sources */,
 				C3613DC91CC988B000D5D0E7 /* ForgotPasswordViewController.swift in Sources */,
 				C3613DD11CC9A54000D5D0E7 /* MovieCell.swift in Sources */,
@@ -410,6 +413,7 @@
 				C3A41F8D1CC92B8A00EFEE93 /* AppDelegate.swift in Sources */,
 				C358E0561CC9F7CC00E6C766 /* ProfileViewController.swift in Sources */,
 				C358E04A1CC9BEF100E6C766 /* DVDViewController.swift in Sources */,
+				C3462F531CCDBFC900FBBD9F /* SearchInstructionsViewController.swift in Sources */,
 				C3A41FBB1CC92F4200EFEE93 /* BaseService.swift in Sources */,
 				C3160CEE1CCD8C250077F121 /* RecommendationsViewController.swift in Sources */,
 				C3613DCF1CC99FE300D5D0E7 /* MoviesViewController.swift in Sources */,

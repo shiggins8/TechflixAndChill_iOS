@@ -21,9 +21,16 @@ class MovieDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         movieTitleLabel.text = movie["title"] as? String
-        synopsisLabel.text = movie["synopsis"] as? String
         
-        print(movie["title"] as? String)
+        if movie["synopsis"] as? String == ""
+        {
+            synopsisLabel.text = "No synopsis available"
+            
+        } else
+        {
+            synopsisLabel.text = movie["synopsis"] as? String
+        }
+        
         
         let poster = movie["posters"] as! NSDictionary
         let posterUrl = poster["thumbnail"] as! String
@@ -73,7 +80,6 @@ class MovieDetailViewController: UIViewController {
         
         if let sourceViewController = sender.sourceViewController as? RatingViewController {
             // Add a new meal.
-            print("should be updating rating")
             let temp = sourceViewController.rating
             print(temp)
         }
